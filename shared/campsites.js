@@ -24,13 +24,4 @@ export const CAMPSITES = [
     description:
       "Contains a list of the most popular gyms located in Northern Virginia",
   },
-  // {
-  //   id: 3,
-  //   name: "Redux Woods Campground",
-  //   image: "/images/redux-woods.jpg",
-  //   elevation: 42,
-  //   featured: true,
-  //   description:
-  //     "You'll never want to leave this hidden gem, deep within the lush Redux Woods.",
-  // },
 ];
