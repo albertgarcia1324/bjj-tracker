@@ -27,6 +27,7 @@ class Training extends Component {
       escape: false,
       date: new Date(),
       showCalendar: false,
+      totalTraining: [],
     };
   }
 
@@ -105,6 +106,29 @@ class Training extends Component {
     });
   }
 
+  totalTraining() {
+    const updatedTraining = this.state.totalTraining;
+    updatedTraining.push({
+      hours: this.state.hours,
+      guard: this.state.guard,
+      passing: this.state.passing,
+      back: this.state.back,
+      submission: this.state.submission,
+      leglock: this.state.leglock,
+      escape: this.state.escape,
+    });
+
+    this.setState({
+      totalTraining: updatedTraining,
+    });
+  }
+
+  getTrainingHours() {
+    return this.state.totalTraining.reduce((acc, cv) => {
+      return acc + Number(cv.hours);
+    }, 0);
+  }
+
   async presentLocalNotification(date) {
     function sendNotification() {
       Notifications.setNotificationHandler({
@@ -115,7 +139,7 @@ class Training extends Component {
 
       Notifications.scheduleNotificationAsync({
         content: {
-          title: "Your Campsite Reservation Search",
+          title: "Your Training Log",
           body: `Enter ${date} trained`,
         },
         trigger: null,
@@ -239,13 +263,16 @@ class Training extends Component {
           <View style={styles.formRow}>
             <Button
               onPress={() => {
+                this.totalTraining();
                 this.createAlert();
-                // this.resetForm();
               }}
               title="Enter"
               color="#30475E"
               accessibilityLabel="Tap me to enter training information"
             />
+          </View>
+          <View>
+            <Text>Total Hours Trained: {this.getTrainingHours()}</Text>
           </View>
         </Animatable.View>
       </ScrollView>
