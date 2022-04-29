@@ -49,7 +49,7 @@ class CampsiteInfo extends Component {
   }
 
   static navigationOptions = {
-    title: "Campsite Information",
+    title: "Jiu-Jitsu Gym's",
   };
 
   markFavorite() {

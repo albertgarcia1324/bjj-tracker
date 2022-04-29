@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Home from "./HomeComponent";
 import Directory from "./DirectoryComponent";
 import CampsiteInfo from "./CampsiteInfo";
+import Training from "./TrainingComponent";
 import About from "./AboutComponent";
 import Contact from "./ContactComponent";
 import Constants from "expo-constants";
@@ -67,6 +68,23 @@ const HomeNavigator = createStackNavigator(
   }
 );
 
+const TrainingNavigator = createStackNavigator(
+  {
+    Training: { screen: Training },
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: "#30475E",
+      },
+      headerTintColor: "#fff",
+      headerTitleStyle: {
+        color: "#fff",
+      },
+    }),
+  }
+);
+
 const AboutNavigator = createStackNavigator(
   {
     About: { screen: About },
@@ -126,7 +144,6 @@ const CustomDrawerContentComponent = (props) => (
 const MainNavigator = createDrawerNavigator(
   {
     Home: {
-      color: "white",
       screen: HomeNavigator,
       navigationOptions: {},
     },
@@ -134,6 +151,12 @@ const MainNavigator = createDrawerNavigator(
       screen: DirectoryNavigator,
       navigationOptions: {
         drawerLabel: "Gym's",
+      },
+    },
+    Training: {
+      screen: TrainingNavigator,
+      navigationOptions: {
+        drawerLabel: "Training",
       },
     },
     About: {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ScrollView } from "react-native-gesture-handler";
 import { Card } from "react-native-elements";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text } from "react-native";
 
 class Contact extends Component {
   static navigationOptions = {
