@@ -1,22 +1,29 @@
 import React, { Component } from "react";
-import { FlatList, Text } from "react-native";
+import { FlatList, Text, StyleSheet, View } from "react-native";
 import { Card, ListItem } from "react-native-elements";
 import { ScrollView } from "react-native-gesture-handler";
 import { PARTNERS } from "../shared/partners";
 
 function Mission() {
   return (
-    <Card title="Our Mission">
-      <Text style={{ margin: 10 }}>
-        We present a curated database of the best campsites in the vast woods
-        and backcountry of the World Wide Web Wilderness. We increase access to
-        adventure for the public while promoting safe and respectful use of
-        resources. The expert wilderness trekkers on our staff personally verify
-        each campsite to make sure that they are up to our standards. We also
-        present a platform for campers to share reviews on campsites they have
-        visited with each other.
-      </Text>
-    </Card>
+    <View style={styleSheet.Container}>
+      <Card title="The Goal" containerStyle={styleSheet.Title}>
+        <Card containerStyle={styleSheet.CardContainer}>
+          <Text style={{ margin: 10, textAlign: "left" }}>
+            Welcome! I hold the rank of purple belt in Brazilian Jiu-Jitsu and
+            live in the Maryland/DC/Virginia area and created this app to enable
+            you to find various gym's in the area quickly and efficiently. I
+            have trained for many years and have learned that you can improve
+            faster by training consistenly over a long period of time and
+            tracking your training. Furthermore, this app contains a training
+            log to help you keep track of the amount of hours you train.
+            Jiu-Jitsu is extremely hard and takes years of practice, by tracking
+            the actual hours you train will better enable you to adjust your
+            training schedule.
+          </Text>
+        </Card>
+      </Card>
+    </View>
   );
 }
 
@@ -43,9 +50,9 @@ class About extends Component {
       );
     };
     return (
-      <ScrollView>
+      <ScrollView style={styleSheet.Container}>
         <Mission />
-        <Card title="Community Partners">
+        <Card title="Features" containerStyle={styleSheet.CardContainer}>
           <FlatList
             data={this.state.partners}
             keyExtractor={(item) => item.id.toString()}
@@ -56,5 +63,17 @@ class About extends Component {
     );
   }
 }
+
+const styleSheet = StyleSheet.create({
+  Container: {
+    backgroundColor: "#30475E",
+  },
+  CardContainer: {
+    backgroundColor: "#F5F5F5",
+  },
+  Title: {
+    color: "red",
+  },
+});
 
 export default About;

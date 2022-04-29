@@ -23,16 +23,7 @@ const DirectoryNavigator = createStackNavigator(
   {
     Directory: {
       screen: Directory,
-      navigationOptions: ({ navigation }) => ({
-        // headerLeft: (
-        //   <Icon
-        //     name="list"
-        //     type="font-awesome"
-        //     iconStyle={styles.stackIcon}
-        //     onPress={() => navigation.toggleDrawer()}
-        //   />
-        // ),
-      }),
+      navigationOptions: ({ navigation }) => ({}),
     },
     CampsiteInfo: { screen: CampsiteInfo },
   },
@@ -63,14 +54,15 @@ const HomeNavigator = createStackNavigator(
       headerTitleStyle: {
         color: "#fff",
       },
-      // headerLeft: (
-      //   <Icon
-      //     name="home"
-      //     type="font-awesome"
-      //     iconStyle={styles.stackIcon}
-      //     onPress={() => navigation.toggleDrawer()}
-      //   />
-      // ),
+      headerLeft: (
+        <Icon
+          name="home"
+          type="font-awesome"
+          iconStyle={styles.stackIcon}
+          onPress={() => navigation.toggleDrawer()}
+        />
+      ),
+      header: <Text></Text>,
     }),
   }
 );
@@ -88,14 +80,6 @@ const AboutNavigator = createStackNavigator(
       headerTitleStyle: {
         color: "#fff",
       },
-      // headerLeft: (
-      //   <Icon
-      //     name="info-circle"
-      //     type="font-awesome"
-      //     iconStyle={styles.stackIcon}
-      //     onPress={() => navigation.toggleDrawer()}
-      //   />
-      // ),
     }),
   }
 );
@@ -113,14 +97,6 @@ const ContactNavigator = createStackNavigator(
       headerTitleStyle: {
         color: "#fff",
       },
-      // headerLeft: (
-      //   <Icon
-      //     name="address-card"
-      //     type="font-awesome"
-      //     iconStyle={styles.stackIcon}
-      //     onPress={() => navigation.toggleDrawer()}
-      //   />
-      // ),
     }),
   }
 );
@@ -150,48 +126,26 @@ const CustomDrawerContentComponent = (props) => (
 const MainNavigator = createDrawerNavigator(
   {
     Home: {
+      color: "white",
       screen: HomeNavigator,
-      navigationOptions: {
-        // drawerIcon: ({ tintColor }) => (
-        //   <Icon name="home" type="font-awesome" size={24} color={tintColor} />
-        // ),
-      },
+      navigationOptions: {},
     },
     Directory: {
       screen: DirectoryNavigator,
       navigationOptions: {
         drawerLabel: "Gym's",
-        // drawerIcon: ({ tintColor }) => (
-        //   <Icon name="list" type="font-awesome" size={24} color={tintColor} />
-        // ),
       },
     },
     About: {
       screen: AboutNavigator,
       navigationOptions: {
         drawerLabel: "About",
-        // drawerIcon: ({ tintColor }) => (
-        //   <Icon
-        //     name="info-circle"
-        //     type="font-awesome"
-        //     size={24}
-        //     color={tintColor}
-        //   />
-        // ),
       },
     },
     Contact: {
       screen: ContactNavigator,
       navigationOptions: {
         drawerLabel: "Contact",
-        // drawerIcon: ({ tintColor }) => (
-        //   <Icon
-        //     name="address-card"
-        //     type="font-awesome"
-        //     size={24}
-        //     color={tintColor}
-        //   />
-        // ),
       },
     },
   },

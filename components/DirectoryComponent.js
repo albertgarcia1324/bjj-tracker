@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { FlatList } from "react-native";
 import { ListItem } from "react-native-elements";
 import { CAMPSITES } from "../shared/campsites";
+import { GYMS } from "../shared/mdgyms";
 
 class Directory extends Component {
   constructor(props) {
     super(props);
     this.state = {
       campsites: CAMPSITES,
+      gyms: GYMS,
     };
   }
 
@@ -22,7 +24,7 @@ class Directory extends Component {
         <ListItem
           title={item.name}
           subtitle={item.description}
-          onPress={() => navigate("CampsiteInfo", { campsiteId: item.id })}
+          onPress={() => navigate("CampsiteInfo", { gymId: item.id })}
           leftAvatar={{ source: require("./images/maryland.png") }}
         />
       );
