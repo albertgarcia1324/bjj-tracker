@@ -58,14 +58,14 @@ class CampsiteInfo extends Component {
 
   render() {
     // const campsiteId = this.props.navigation.getParam("campsiteId");
-    const gymId = this.props.navigation.getParam("gymId");
+    // const gymId = this.props.navigation.getParam("gymId");
     // const campsite = this.state.campsites.filter(
     //   (campsite) => campsite.id === campsiteId
     // )[0];
-    const gym = this.state.gyms.filter((gym) => gym.id === gymId)[0];
+    // const gym = this.state.gyms.filter((gym) => gym.id === gymId)[0];
     return (
       <ScrollView>
-        <RenderGym gym={gym}></RenderGym>
+        <RenderGym gym={this.state.gyms}></RenderGym>
       </ScrollView>
     );
   }
@@ -74,6 +74,7 @@ class CampsiteInfo extends Component {
 const styleSheet = StyleSheet.create({
   Container: {
     backgroundColor: "#30475E",
+    paddingTop: 30,
   },
   MainContainer: {
     flex: 1,

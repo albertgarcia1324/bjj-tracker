@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import CampsiteInfo from "./CampsiteInfo";
 import { FlatList } from "react-native";
 import { ListItem } from "react-native-elements";
 import { CAMPSITES } from "../shared/campsites";
 import { GYMS } from "../shared/mdgyms";
+import { createStackNavigator } from "react-navigation-stack";
 
 class Directory extends Component {
   constructor(props) {
@@ -22,6 +24,7 @@ class Directory extends Component {
     const renderDirectoryItem = ({ item }) => {
       return (
         <ListItem
+          style={{ paddingTop: 40 }}
           title={item.name}
           subtitle={item.description}
           onPress={() => navigate("CampsiteInfo", { gymId: item.id })}

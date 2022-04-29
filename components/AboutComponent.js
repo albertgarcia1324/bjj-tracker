@@ -67,6 +67,7 @@ class About extends Component {
 const styleSheet = StyleSheet.create({
   Container: {
     backgroundColor: "#30475E",
+    paddingTop: 15,
   },
   CardContainer: {
     backgroundColor: "#F5F5F5",

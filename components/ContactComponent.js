@@ -28,6 +28,7 @@ class Contact extends Component {
 const styleSheet = StyleSheet.create({
   Container: {
     backgroundColor: "#30475E",
+    paddingTop: 30,
   },
   CardContainer: {
     backgroundColor: "#F5F5F5",

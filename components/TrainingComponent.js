@@ -133,7 +133,7 @@ class Training extends Component {
 
   render() {
     return (
-      <ScrollView>
+      <ScrollView style={styles.Container}>
         <Animatable.View animation="zoomIn" duration={2000} delay={1000}>
           <View style={styles.formRow}>
             <Text style={styles.formLabel}>Hours Trained Today</Text>
@@ -164,7 +164,7 @@ class Training extends Component {
             <Switch
               style={styles.formItem}
               value={this.state.guard}
-              trackColor={{ true: "#5637DD", false: null }}
+              trackColor={{ true: "#F05454", false: null }}
               onValueChange={(value) => this.setState({ guard: value })}
             />
           </View>
@@ -173,7 +173,7 @@ class Training extends Component {
             <Switch
               style={styles.formItem}
               value={this.state.passing}
-              trackColor={{ true: "#5637DD", false: null }}
+              trackColor={{ true: "#F05454", false: null }}
               onValueChange={(value) => this.setState({ passing: value })}
             />
           </View>
@@ -182,7 +182,7 @@ class Training extends Component {
             <Switch
               style={styles.formItem}
               value={this.state.back}
-              trackColor={{ true: "#5637DD", false: null }}
+              trackColor={{ true: "#F05454", false: null }}
               onValueChange={(value) => this.setState({ back: value })}
             />
           </View>
@@ -191,7 +191,7 @@ class Training extends Component {
             <Switch
               style={styles.formItem}
               value={this.state.submission}
-              trackColor={{ true: "#5637DD", false: null }}
+              trackColor={{ true: "#F05454", false: null }}
               onValueChange={(value) => this.setState({ submission: value })}
             />
           </View>
@@ -200,7 +200,7 @@ class Training extends Component {
             <Switch
               style={styles.formItem}
               value={this.state.leglock}
-              trackColor={{ true: "#5637DD", false: null }}
+              trackColor={{ true: "#F05454", false: null }}
               onValueChange={(value) => this.setState({ leglock: value })}
             />
           </View>
@@ -209,7 +209,7 @@ class Training extends Component {
             <Switch
               style={styles.formItem}
               value={this.state.escape}
-              trackColor={{ true: "#5637DD", false: null }}
+              trackColor={{ true: "#F05454", false: null }}
               onValueChange={(value) => this.setState({ escape: value })}
             />
           </View>
@@ -220,7 +220,7 @@ class Training extends Component {
                 this.setState({ showCalendar: !this.state.showCalendar })
               }
               title={this.state.date.toLocaleDateString("en-US")}
-              color="#5637DD"
+              color="#30475E"
               accessibilityLabel="Tap me to select day trained"
             />
           </View>
@@ -243,7 +243,7 @@ class Training extends Component {
                 // this.resetForm();
               }}
               title="Enter"
-              color="#5637DD"
+              color="#30475E"
               accessibilityLabel="Tap me to enter training information"
             />
           </View>
@@ -254,6 +254,10 @@ class Training extends Component {
 }
 
 const styles = StyleSheet.create({
+  Container: {
+    backgroundColor: "#F5F5F5",
+    paddingTop: 15,
+  },
   formRow: {
     alignItems: "center",
     justifyContent: "center",
@@ -267,22 +271,6 @@ const styles = StyleSheet.create({
   },
   formItem: {
     flex: 1,
-  },
-  modal: {
-    justifyContent: "center",
-    margin: 20,
-  },
-  modalTitle: {
-    fontSize: 24,
-    fontWeight: "bold",
-    backgroundColor: "#5637DD",
-    textAlign: "center",
-    color: "#fff",
-    marginBottom: 20,
-  },
-  modalText: {
-    fontSize: 18,
-    margin: 10,
   },
 });
 
